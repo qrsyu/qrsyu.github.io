@@ -75,3 +75,7 @@
 .menu-links a:hover{
   text-decoration: underline;
 }
+
+.menu-links p {
+  white-space: nowrap;
+}

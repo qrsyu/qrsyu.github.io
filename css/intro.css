@@ -1,8 +1,9 @@
 .intro{
+  width: 90vw;
+  margin: 0 auto;
   display:flex;
   align-items:flex-start;
   gap: clamp(24px, 3.8vw, 50px);
-  width: 100%;
 }
 .intro-left{
   flex: 0 0 clamp(300px, 25vw, 460px);  
@@ -47,24 +48,6 @@
   text-decoration: none;
 }
 
-
-.intro-right h3{
-  text-align: justify;
-  font-size: 25px;
-  color: #ffffff;
-  font-weight: 200;
-  margin-bottom: 5px;
-}
-
-.intro-right p{
-  text-align: justify;
-  font-size: clamp(15px, 1vw, 25px);
-  color: rgba(240, 240, 240, 0.85);
-  font-weight: 100;
-  margin-bottom: 10px;
-}
-
-
 .intro-right i{
   font-size: clamp(15px, 1vw, 25px);
 }
@@ -74,5 +57,4 @@
 }
 
 .intro-right a:hover {
-  text-decoration: underline; /* Add underline on hover for better visibility */
-}
+  text-decoration: underline;} /* Add underline on hover for better visibility

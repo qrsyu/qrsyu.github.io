@@ -1,0 +1,47 @@
+#neurons-section{
+  position: relative;
+  min-height: 120vh;   
+  background: black;
+}
+
+#neurons-layer{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.neuron {
+  pointer-events: auto;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  text-decoration: none;
+  backdrop-filter: blur(2px);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.neuron:hover {
+  filter: brightness(1.15);
+  transform: scale(1.06);
+}
+
+.neuron-label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,0.9);
+  font-size: 18px;
+}
+
+/* Color personalities */
+.neuron-cyan {
+  background: radial-gradient(circle, rgba(0,255,210,0.9), rgba(0,120,255,0.3), transparent 70%);
+}
+.neuron-magenta {
+  background: radial-gradient(circle, rgba(255,90,180,0.9), rgba(140,70,255,0.3), transparent 70%);
+}
+.neuron-amber {
+  background: radial-gradient(circle, rgba(255,200,0,0.9), rgba(255,80,0,0.3), transparent 70%);
+}

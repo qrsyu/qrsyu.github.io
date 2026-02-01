@@ -10,7 +10,7 @@
   grid-template-columns: auto 1fr auto;
   align-items: center;
 
-  background: transparent;
+  background: #000;
   color: #fff;
 }
 

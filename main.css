@@ -1,6 +1,7 @@
 @import url("css/menu.css");
 @import url("css/header.css");
 @import url("css/intro.css");
+@import url("css/neuron.css");
 
 *{
   margin: 0;
@@ -13,17 +14,6 @@ body{
   background: #000000;
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   margin: 0;
-}
-
-/* Group intro and container */
-.main-container {
-  padding-top: 90px; 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 85vw;
-  margin: 0 auto;
 }
 
 /* Media query for small screens (phones, under 600px wide) */
