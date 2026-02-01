@@ -1,76 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+<!-- Site header with navigation -->
+<header class="site-header">
+  <div class="nav-left">
+    <span class="name-tag">Qiaorong Shannon Yu</span>
+  </div>
+
+  <div class="nav-center">
+    <!-- COMPUTATIONAL COGNITIVE NEUROSCIENCE -->
+  </div>
+
+  <button class="nav-menu" id="menuBtn" aria-expanded="false" aria-controls="menuPanel">
+    MENU <span class="burger">☰</span>
+  </button>
+</header>
+
+<!-- Slide-in menu panel -->
+<div class="menu-overlay" id="menuOverlay" hidden></div>
+
+<aside class="menu-panel" id="menuPanel" aria-hidden="true">
+  <button class="menu-close" id="menuClose" aria-label="Close menu">×</button>
+
+  <nav class="menu-links">
+    <a href="./pages/research_page/index.html">Research</a>
+    <a href="./pages/art_page/index.html">Art</a>
+    <a href="./pages/comm_page/index.html">Community</a>
+
+    <hr/>
+
+    <p><i class="fas fa-file-alt"></i> <a href="dict/files/qyu_cv.pdf">CV</a></p>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:s.yu@nyu.edu">Email</a></p>
+    <p><i class="fab fa-github"></i> <a href="https://github.com/qrsyu">Github</a></p>
+    <p><i class="fab fa-google"></i> <a href="https://scholar.google.com/citations?user=2EaykxYAAAAJ&hl=en&oi=ao">Scholar</a></p>
+    <p><i class="fab fa-orcid"></i> <a href="https://orcid.org/0009-0008-3761-3931" target="_blank" rel="noopener">ORCID</a></p>
+    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/qrsyu27315">LinkedIn</a></p>
+    <p><i class="fas fa-map-marker-alt"></i> New York, USA</p>
+  </nav>
+</aside>
+
+
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Change your WEBSITE TITLE HERE-->
-    <title>Shannon Q Yu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- <script src="index.js"></script> -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Q S Yu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-    <body>
-        <div class="main-container">
 
-            <!-- Self introductions  -->
-            <div class="text-intro">
-                <div class="intro">
-                    <!-- Here's the Big title and the subtitle on the left on the main page -->
-                    <h1>Shannon Qiaorong Yu</h1>
-                    <h2>Hi, I'm Shannon (She/Her), and I'm currently pursuing a Master degree in 
-                        Mathematical and Theoretical Physics at University of Oxford.</h2>
-                </div>
-                <div class="author">
-                    <!-- Here's some basic information with links -->
-                    <p><i class="fas fa-map-marker-alt"></i> Oxford, UK</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:qiaorong.yu@balliol.ox.ac.uk">Email</a></p>
-                    <p><i class="fab fa-github"></i> <a href="https://github.com/yqiaorong">Github</a></p>
-                    <p><i class="fas fa-file-alt"></i> <a href="dict/files/qyu_cv.pdf">CV</a></p>
-                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/qiaorong-yu-05b3882a8/">LinkedIn</a></p>
-                </div>
+<!-- Menu bar -->
+<script src="menu.js"></script>
+
+<body>
+  <!-- Fullscreen interactive layer -->
+  <canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+  <div class="main-container">
+
+    <!-- Self introductions  -->
+    <div class="intro"> 
+        <div class="intro-left">
+            <div class="intro-name">
+                <h1>Qiaorong Shannon Yu</h1>
             </div>
-
-            <!-- Main content page -->
-            <div class="container">
-
-                <!-- Here's the cards on the right. You can add more cards with copy-paste the whole <div class="card"></div> block -->
-                <div class="card">
-                    <div class="content">
-                        <h2></h2>
-                        <!-- The title on the card.-->
-                        <h3>Research</h3>
-                        <div class="hov">
-                            <!-- The subtitle -->
-                            <!-- <p></p> -->
-                            <!-- Link to the subpage-->
-                            <a href="./pages/research_page/index.html">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="content">
-                        <h2></h2>
-                        <h3>Art</h3>
-                        <div class="hov">
-                            <a href="./pages/art_page/index.html">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="content">
-                        <h2></h2>
-                        <h3>Community</h3>
-                        <div class="hov">
-                            <!-- Link to the subpage-->
-                            <a href="./pages/comm_page/index.html">Read More</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="intro-photo">
+                <img src="dict/images/profile.jpg" alt="Qiaorong Shannon Yu portrait">
             </div>
-
         </div>
-    </body>
+        <div class="intro-right">
+            <h2>
+            Hi, I'm Shannon. I am a Ph.D. student in <a href="https://www.cns.nyu.edu/heegerlab/?page=home">Heeger Lab</a> and <a href='https://wp.nyu.edu/winawerlab/'>Winawer Lab</a> at New York University.
+            I am interested in the computational cognitive neuroscience of human internally generated sensory experience, dreaming and consciousness. 
+            </h2>
+            <h2>
+            My current research focues on how internally generated activity patterns drift over time and scale with working memory load, and how these dynamics can account for characteristic behavioral error patterns observed in human working memory.
+            Using computational models, I study how biologically intrinsic noise interacts with recurrent neural dynamics to shape the stability and variability of these internal representations, linking circuit-level processes to behavioral measures of memory performance.    
+            </h2>
+            <h2>
+            I have completed my Master's degree in mathematical and theoretical physics at University of Oxford. I worked with Prof Vijay Balasubramanian on understanding the principles of hippocampal spatial and temporal coding using computational modeling. 
+            </h2>
+        </div>
+    </div>
+
+
+  </div>
+
+  <!-- Add this
+  <script src="index.js"></script> -->
+</body>
 </html>

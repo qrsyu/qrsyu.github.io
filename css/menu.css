@@ -1,0 +1,77 @@
+.nav-menu{
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-menu .burger{
+  font-size: 18px;
+  line-height: 1;
+}
+
+.menu-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 998;
+}
+
+.menu-panel{
+  position: fixed;
+  top: 0;
+  right: -360px; /* hidden offscreen */
+  width: 200px;
+  height: 100%;
+  z-index: 999;
+
+  background: rgba(10,10,14,0.95);
+  backdrop-filter: blur(8px);
+  border-left: 1px solid rgba(255,255,255,0.12);
+
+  padding: 24px 18px;
+  transition: right 250ms ease;
+  color: rgba(240, 240, 240, 0.9);
+}
+.menu-panel a,
+.menu-panel i {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.menu-panel.open{
+  right: 0;
+}
+
+.menu-close{
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.85);
+  font-size: 30px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+}
+
+.menu-links{
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.menu-links a{
+  color: rgba(240,240,240,0.9);
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+}
+
+.menu-links a:hover{
+  text-decoration: underline;
+}

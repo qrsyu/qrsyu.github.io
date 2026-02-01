@@ -1,0 +1,78 @@
+.intro{
+  display:flex;
+  align-items:flex-start;
+  gap: clamp(24px, 3.8vw, 50px);
+  width: 100%;
+}
+.intro-left{
+  flex: 0 0 clamp(300px, 25vw, 460px);  
+  min-width: 320px;
+}
+
+/* Name */
+.intro-name h1{
+  white-space: nowrap;
+}
+.intro-name h1 {
+  font-size: clamp(30px, 5vw, 35px);
+  line-height: 1.1;
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* Photo */
+.intro-photo {
+  width: 100%;
+  margin-top: 1.2rem;
+}
+.intro-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Introduction */
+.intro-right{
+  flex: 1 1 auto;
+  min-width: 0; 
+}
+.intro-right h2 {
+  font-size: clamp(18px, 1vw, 28px);
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0 0 1.2em 0;
+  color: rgba(240, 240, 240, 0.85);
+  text-decoration: none;
+}
+
+
+.intro-right h3{
+  text-align: justify;
+  font-size: 25px;
+  color: #ffffff;
+  font-weight: 200;
+  margin-bottom: 5px;
+}
+
+.intro-right p{
+  text-align: justify;
+  font-size: clamp(15px, 1vw, 25px);
+  color: rgba(240, 240, 240, 0.85);
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+
+.intro-right i{
+  font-size: clamp(15px, 1vw, 25px);
+}
+.intro-right a {
+  color: rgba(240, 240, 240, 0.85);
+  text-decoration: none; /* Remove underline from links */
+}
+
+.intro-right a:hover {
+  text-decoration: underline; /* Add underline on hover for better visibility */
+}

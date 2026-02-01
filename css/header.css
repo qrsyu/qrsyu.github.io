@@ -1,0 +1,34 @@
+.site-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 32px;
+  z-index: 999;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  background: transparent;
+  color: #fff;
+}
+
+.name-tag{
+  background: #fff;
+  color: #0b1b2b;
+  padding: 4px 10px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.nav-center{
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 5px;
+  opacity: 0.9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,3 +1,7 @@
+@import url("css/menu.css");
+@import url("css/header.css");
+@import url("css/intro.css");
+
 *{
   margin: 0;
   padding: 0;
@@ -6,297 +10,34 @@
 
 body{
   min-height: 100vh;
-  min-width: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center; 
-  align-items: center;
-  background-image: url('./dict/images/main_cover.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  font-family: 'Times New Roman', Times, serif;
-  margin:0 auto; /* The margin top/bottom, the margin left/right */
+  background: #000000;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  margin: 0;
 }
 
 /* Group intro and container */
 .main-container {
+  padding-top: 90px; 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  max-width: 95%; 
+  width: 85vw;
+  margin: 0 auto;
 }
-
-.text-intro {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 45%; /* Entire width of this block */
-  margin-left: 10%;
-  
-  justify-content: center;
-  flex-wrap: wrap;
-  z-index: 1;
-}
-
-/* Name */
-.text-intro .intro h1{
-  /* display: flex; */
-  text-align: justify;
-  font-size: 35px;
-  color: #fff;
-  font-weight: 600;
-  margin-bottom: 20px;
-  /* margin: 20px 20px 0 20px; */
-}
-
-/* Descriptions */
-.text-intro .intro h2{
-  width: 100%;  /* The width of this small block on screen */
-  text-align: justify;
-  font-size: 25px;
-  color: #fff;
-  font-weight: 200;
-  line-height: 1.5; /* 行间距 */
-  margin-bottom: 20px;
-  /* margin: 20px 20px 0 20px; */
-}
-
-.text-intro .author h3{
-  text-align: justify;
-  font-size: 25px;
-  color: #ffffff;
-  font-weight: 200;
-  margin-bottom: 5px;
-  /* margin: 20px 20px 0 20px; */
-}
-
-.text-intro .author p{
-  text-align: justify;
-  font-size: 20px;
-  color: #ffffff;
-  font-weight: 100;
-  margin-bottom: 10px;
-  /* margin: 20px 20px 0 20px; */
-}
-
-/* Icons */
-.text-intro .author i{
-  font-size: 15px;
-}
-
-.text-intro .author a {
-  color: #ffffff; /* Ensure links are white */
-  text-decoration: none; /* Remove underline from links */
-}
-
-.text-intro .author a:hover {
-  text-decoration: underline; /* Add underline on hover for better visibility */
-}
-
-.container{
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 55%; /* Entire width of this block */
-  margin-right: 10%;
-  /* flex-wrap: wrap; */
-  z-index: 1;
-  /* margin-top: 100px; */
-}
-
-.container .card{
-  position: relative;
-  width: 280px;
-  height: 400px;
-  background-color: rgba(255, 255,255,0.1);
-  margin: 30px;
-  border-radius: 15px;
-  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top: 1px solid rgba(255, 255, 255,0.5);
-  border-left: 1px solid rgba(255, 255, 255,0.5);
-  backdrop-filter: blur(5px);
-}
-
-.container .card .content{
-  padding: 20px;
-  text-align: center;
-}
-
-.container .card .content h3{
-  font-size: 40px;
-  color: #fff;
-  margin-top: -20px;
-}
-
-.container .card .content p{
-  text-align: justify;
-  font-size: 18px;
-  color: #fff;
-  font-weight: 300;
-  margin: 20px 20px 0 20px;
-}  
-
-.container .card .content a{
-  position: relative;
-  display: inline-block;
-  padding: 8px 20px;
-  margin-top: 15px;
-  background-color: #fff;
-  color: #000;
-  text-decoration: none;
-  border-radius: 20px;
-  font-weight: 500;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-
 
 /* Media query for small screens (phones, under 600px wide) */
-@media (max-width: 600px) {
-    
-  /* Make body take up the full width */
-  body {
-      display: flex;  
-      /* max-width: 100vw;    */
-      flex-direction: column;
-      background-size: cover; 
-      /* justify-content: center; 
-      background-position: center;
-      align-items: center;
-      padding: 2px 0;
-      box-sizing: border-box;
-      overflow-x: hidden; */
-  }
-
-  .main-container {
-    /* display: flex;
-    max-width: 100vw; */
+@media (max-width: 768px) {
+  .intro{
     flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    /* padding: 0 10px; */
+    gap: 20px;
   }
-
-  .text-intro {
-    /* display: flex; 
-    flex-direction: column;
-    justify-content: center; 
-    text-align: center; 
-    align-items: center;
-    padding: 0 10px; */
-    margin: 0;
-  } 
-
-  /* Adjust text sizes */
-  .text-intro .intro h1 {
-      font-size: 28px;
+  .intro-left{
+    flex: none;
+    width: 100%;
+    min-width: 0;
   }
-
-  .text-intro .intro h2 {
-      font-size: 20px;
-  }
-
-  .text-intro .author h3 {
-      font-size: 18px;
-  }
-
-  .text-intro .author p {
-      font-size: 14px;
-  }
-
-  .container {
-    /* display: flex; */
-    flex-direction: column; 
-    align-items: center;  
-    margin: 0;  
-    /* width: 100%; */
-    /* box-sizing: border-box; */
-}
-
-  /* Make cards more flexible and reduce margins */
-  .container .card {
-      width: 280px; 
-      max-width: 90%; 
-      /* padding: 10px;   */
-      align-items: center;
-      height: auto; 
-      margin: 10px auto;
-      /* box-sizing: border-box; */
-  }
-
-  .container .card .content h3 {
-      font-size: 30px;
-  }
-
-  .container .card .content p {
-      font-size: 16px;
-      margin: 10px;
-  }
-}
-
-
-/* Media query for median screens (iPad) */
-@media (min-width: 600px) and (max-width: 800px) {
-  /* Styles for iPad screen sizes */
-
-  .main-container {
-    display: flex;
-    flex-direction: row; /* Side-by-side layout on larger screen */
-    justify-content: center;
-    align-items: center;
-    width: 85%; /* Take up a bit more space */
-    margin: 0 auto;
-  }
-
-  .text-intro {
-    width: 40%; /* Slightly narrower for iPad layout */
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .container {
-    width: 55%; /* Adjust for iPad to keep balance */
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  /* Adjust font sizes for iPad */
-  .text-intro .intro h1 {
-      font-size: 32px;
-  }
-
-  .text-intro .intro h2 {
-      font-size: 24px;
-  }
-
-  .text-intro .author h3 {
-      font-size: 20px;
-  }
-
-  .text-intro .author p {
-      font-size: 18px;
-  }
-
-  .container .card {
-      width: 300px;
-      margin: 15px;
-  }
-
-  .container .card .content h3 {
-      font-size: 26px;
-  }
-
-  .container .card .content p {
-      font-size: 16px;
+  .intro-name h1{
+    white-space: normal; 
   }
 }
