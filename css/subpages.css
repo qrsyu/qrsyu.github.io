@@ -12,7 +12,9 @@
 
 /* Name */
 .subpage-name h1{
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .subpage-name h1 {
   font-size: clamp(30px, 5vw, 35px);
@@ -72,7 +74,7 @@
 
 @media (max-width: 768px) {
   .subpage-photo {
-    width: 100vw;
+    width: 90vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
   }
