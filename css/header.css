@@ -21,6 +21,8 @@
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 2px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .nav-center{

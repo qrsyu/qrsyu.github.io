@@ -1,0 +1,58 @@
+.subpage{
+  width: 90vw;
+  margin: 0 auto;
+  display:flex;
+  flex-direction: column;
+  align-items:flex-start;
+  gap: clamp(24px, 3.8vw, 50px);
+}
+.subpage-right + .subpage-photo{
+  margin-top: -30px; 
+}
+
+/* Name */
+.subpage-name h1{
+  white-space: nowrap;
+}
+.subpage-name h1 {
+  font-size: clamp(30px, 5vw, 35px);
+  line-height: 1.1;
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* Photo */
+.subpage-photo {
+  width: 100%;
+  margin-top: 0;
+}
+.subpage-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Content */
+.subpage-right{
+  flex: 1 1 auto;
+  min-width: 0; 
+}
+.subpage-right h2 {
+  font-size: clamp(18px, 1vw, 28px);
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0 0 0.5em 0;
+  color: rgba(240, 240, 240, 0.85);
+  text-decoration: none;
+}
+.subpage-right i{
+  font-size: clamp(15px, 1vw, 25px);
+}
+.subpage-right a {
+  color: rgba(240, 240, 240, 0.85);
+  text-decoration: none; /* Remove underline from links */
+}
+.subpage-right a:hover {
+  text-decoration: underline;} /* Add underline on hover for better visibility

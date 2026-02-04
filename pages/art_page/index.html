@@ -3,88 +3,96 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Shannon Q Yu | Art</title>
+    <title>Q S Yu | Digital Art</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../global.css"/>
+    <link rel="stylesheet" type="text/css" href="../../main.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="../index.js"></script>
 </head>
 
-<body style="background-image: url('../../dict/images/art_cover.png');">
 
-    <!-- Content on the left, 4 MAXIMUM-->
-    <div class="left_container">
-        <div class="btn A" onclick="showContent('A')">
-            <h3>Digitals</h3>
+
+<!-- <body style="background-image: url('../../dict/images/art_cover.png');"> -->
+<body>
+    <!-- Site header with navigation -->
+    <header class="site-header">
+        <div class="nav-left">
+        <!-- <span class="name-tag">Qiaorong Shannon Yu</span> -->
+        <a href="../../main.html" class="name-tag">Qiaorong Shannon Yu</a>
         </div>
-        <!-- <div class="btn B" onclick="showContent('B')">
-            <h3> XXX </h3>
-        </div> -->
-        <!-- <div class="btn C" onclick="showContent('C')">
-            <h3> XXX </h3>
+
+        <div class="nav-center">
+        <!-- COMPUTATIONAL COGNITIVE NEUROSCIENCE -->
         </div>
-        <div class="btn D" onclick="showContent('D')">
-            <h3> XXX </h3>
-        </div> -->
+
+        <button class="nav-menu" id="menuBtn" aria-expanded="false" aria-controls="menuPanel">
+        MENU <span class="burger">☰</span>
+        </button>
+    </header>
+
+    <!-- Slide-in menu panel -->
+    <div class="menu-overlay" id="menuOverlay" hidden></div>
+
+    <aside class="menu-panel" id="menuPanel" aria-hidden="true">
+        <button class="menu-close" id="menuClose" aria-label="Close menu">×</button>
+
+        <nav class="menu-links">
+        <a href="../research_page/index.html">Research</a>
+        <a href="../art_page/index.html">Digital Art</a>
+        <a href="../comm_page/index.html">Community</a>
+
+        <hr/>
+
+        <a href="../../dict/files/qyu_cv.pdf"><i class="fas fa-file-alt"></i> CV</a>
+        <a href="mailto:s.yu@nyu.edu"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://github.com/qrsyu"><i class="fab fa-github"></i> Github</a>
+        <a href="https://scholar.google.com/citations?user=2EaykxYAAAAJ&hl=en&oi=ao"><i class="fab fa-google"></i> Scholar</a>
+        <a href="https://orcid.org/0009-0008-3761-3931" target="_blank" rel="noopener"><i class="fab fa-orcid"></i> ORCID</a>
+        <a href="https://www.linkedin.com/in/qrsyu27315"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <p><i class="fas fa-map-marker-alt"></i> New York, USA</p>
+        </nav>
+    </aside>
+    
+    <canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+    <div class="subpage"> 
+        <div class="subpage-name">
+            <h1>Motus VR</h1>
+        </div>
+        <div class="subpage-right">
+            <h2>Motus VR is a company renowned for its innovative virtual reality locomotion platforms, and
+                ROVR Systems Ltd makes a naturally intuitive locomotion platform for navigating virtual reality 
+                (the ROVR), making VR comfortable and accessible for 4yrs to 80+yrs. It is utilized in various sectors 
+                including healthcare, training, and gaming. During my internship, I contributed to the development
+                of a 3D environment for an Endless Running game using Unreal Engine 4.27, and it provided me 
+                with the opportunity to apply my art design skills in VR environments construction.
+            </h2>
+            <h2>
+                I have created an interactive platform to immersively explore this virtual environment. Click the link
+                and start your adventure!
+            </h2>
+        </div>
+        <div class="subpage-photo">
+            <img src="../../dict/images/art/unreal-engine/10.png">
+            <img src="../../dict/images/art/unreal-engine/11.png">
+            <img src="../../dict/images/art/unreal-engine/12.png">
+            <img src="../../dict/images/art/unreal-engine/13.png">
+            <img src="../../dict/images/art/unreal-engine/5.png">
+            <img src="../../dict/images/art/unreal-engine/6.png">
+            <img src="../../dict/images/art/unreal-engine/16.png">
+            <img src="../../dict/images/art/unreal-engine/7.png">
+            <img src="../../dict/images/art/unreal-engine/3.png">
+            <img src="../../dict/images/art/unreal-engine/4.png">
+            <img src="../../dict/images/art/unreal-engine/2.png">
+            <img src="../../dict/images/art/unreal-engine/15.png">
+            <img src="../../dict/images/art/unreal-engine/1.png">
+            <img src="../../dict/images/art/unreal-engine/8.png">
+            <img src="../../dict/images/art/unreal-engine/9.png">
+            <img src="../../dict/images/art/unreal-engine/14.png">
+        </div>
     </div>
-        
-    <div class="right_container">
-        
-        <!-- Detailed information of the first category -->
-        <div class="right_present_A content">
+    
+    <script src="../../menu.js"></script>
 
-            <div class="card">
-                <h1>Motus VR, internship</h1>
-                <h2>Mar 2022</h2>
-                <p>Motus VR is a company renowned for its innovative virtual reality locomotion platforms, and
-                    ROVR Systems Ltd makes a naturally intuitive locomotion platform for navigating virtual reality 
-                    (the ROVR), making VR comfortable and accessible for 4yrs to 80+yrs. It is utilized in various sectors 
-                    including healthcare, training, and gaming. During my internship, I contributed to the development
-                    of a 3D environment for an Endless Running game using Unreal Engine 4.27, and it provided me 
-                    with the opportunity to apply my art design skills in VR environments construction. 
-                </p>
-                <!-- Insert image -->
-                <div class="stacking_img">
-                    <img src="../../dict/images/art/unreal-engine/10.png">
-                    <img src="../../dict/images/art/unreal-engine/11.png">
-                    <img src="../../dict/images/art/unreal-engine/12.png">
-                    <img src="../../dict/images/art/unreal-engine/13.png">
-                    <img src="../../dict/images/art/unreal-engine/5.png">
-                    <img src="../../dict/images/art/unreal-engine/6.png">
-                    <img src="../../dict/images/art/unreal-engine/16.png">
-                    <img src="../../dict/images/art/unreal-engine/7.png">
-                    <img src="../../dict/images/art/unreal-engine/3.png">
-                    <img src="../../dict/images/art/unreal-engine/4.png">
-                    <img src="../../dict/images/art/unreal-engine/2.png">
-                    <img src="../../dict/images/art/unreal-engine/15.png">
-                    <img src="../../dict/images/art/unreal-engine/1.png">
-                    <img src="../../dict/images/art/unreal-engine/8.png">
-                    <img src="../../dict/images/art/unreal-engine/9.png">
-                    <img src="../../dict/images/art/unreal-engine/14.png">
-                </div>
-
-                <hr/> <!-- Horizontal line separator -->
-
-            </div>
-
-        </div>
-        
-        <!-- Detailed information of the second category -->
-        <!-- <div class="right_present_B content">
-        </div> -->
-        
-        <!-- Return to the main page -->
-        <div class="return">
-            <div class="btn ds_to_home">
-                <a href="../../index.html"class="int-link">
-                    <h2>Return</h2>
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
-        showContent('A');
-    </script>
 </body>
 </html>

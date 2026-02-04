@@ -9,7 +9,7 @@
       color: "cyan"
     },
     {
-      label: "Art",
+      label: "Digital Art",
       href: "./pages/art_page/index.html",
       color: "magenta"
     },
