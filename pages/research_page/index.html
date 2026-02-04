@@ -3,149 +3,67 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Title of this subpage-->>
-    <title>Shannon Q Yu | Research</title>
+    <title>Q S Yu | Research</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../global.css"/>
-    <script src="../index.js"></script>
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
+
 
 <body style="background-image: url('../../dict/images/research_cover.jpg');">
 
-    <!-- Content on the left, 4 MAXIMUM-->
-    <div class="left_container">
-        <div class="btn A" onclick="showContent('A')">
-            <h3>Physics</h3>
+    <div id="site-header"></div>
+    <canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+    <div class="subpage"> 
+        <div class="subpage-name">
+            <h1>Measuring the splashback feature: Dependence on halo properties and history</h1>
         </div>
-        <div class="btn B" onclick="showContent('B')">
-            <h3>Neuroscience</h3>
-        </div>
-        <!-- <div class="btn C" onclick="showContent('C')">
-            <h3> XXX </h3>
-        </div>
-        <div class="btn D" onclick="showContent('D')">
-            <h3> XXX </h3>
-        </div> -->
-    </div>
-
-    <div class="right_container">
-
-        <!-- Detailed information of the first category -->
-        <div class="right_present_A content">
-
-            <div class="card">
-                <h1>The measurements of the splashback features of dark matter halos using TNG300 and MillenniumTNG simulations</h1>
-                <h2>Vogelsberger Lab, MIT Kavli Institute for Astrophysics and Space Research, Jan 2024 - Ongoing</h2>
-                <p>The splashback radius defines the boundary of a dark matter halo, where infalling dark matter particles 
-                    reach their first apocenter and turn around. By examining the distribution of the splashback radius 
-                    and the associated splashback features of dark matter halos, such as, the width and depth of the minimum 
-                    in the gradient profiles of dark matter halos in cosmological galaxy formation simulations IllustrisTNG 
-                    and MillenniumTNG. In short, the width of the gradient profile decreases with increasing halo mass and 
-                    redshift, indicating a sharper transition in more massive and older halos. Conversely, the depth of the 
-                    gradient profile increases with halo mass and remains relatively independent of redshift, suggesting 
-                    that more massive halos have more pronounced splashback features regardless of their formation epoch.</p>
-                <!-- Bullet points summarizing your role: CAN BE REMOVED AFTER APPLICATION --> 
-                <p>My roles:</p>
-                <ul>
-                    <li>Conceptualised and independently conducted comprehensive data analysis, including computing the
-                        density profiles, bootstrapping the splashback features of dark matter halos, curve fitting to 
-                        derive the mathematical formulas of the splashback features, and investigating factors affecting the splashback features.</li>
-                    <li>Managed complex computation tasks to efficiently process large datasets and reduce the computation time, 
-                        including GPU acceleration, parallel computation, and handling sbatch job submissions.</li>
-                </ul>
-                <p>Paper in preparation.</p>
-
-                <!-- Insert image -->
-                <!-- <div class="stacking_img">
-                    <img src="../../dict/images/research/dm_halo.png">
-                    <img src="../../dict/images/research/density_profile.png">
-                </div> -->
-
-            </div>
-
-            <hr /> <!-- Horizontal line separator -->
-
+        <div class="subpage-right">
+            <h2>The splashback radius defines the boundary of a dark matter halo, where infalling dark matter particles 
+                reach their first apocenter and turn around. By examining the distribution of the splashback radius 
+                and the associated splashback features of dark matter halos, such as, the width and depth of the minimum 
+                in the gradient profiles of dark matter halos in cosmological galaxy formation simulations IllustrisTNG 
+                and MillenniumTNG. In short, the width of the gradient profile decreases with increasing halo mass and 
+                redshift, indicating a sharper transition in more massive and older halos. Conversely, the depth of the 
+                gradient profile increases with halo mass and remains relatively independent of redshift, suggesting 
+                that more massive halos have more pronounced splashback features regardless of their formation epoch.
+            </h2>
+            <h2><a href="https://doi.org/10.33232/001c.146824" class="ext-link">Qiaorong,S.Y.,O’Neil,S.,Shen,X.,Vogelsberger,M.,
+                Bose,S.,Hadzhyska,B., ... &Wu,Z. (2025). Measuring the splashback feature: Dependence on halo properties and history. 
+                The Open Journal of Astrophysics, 8.</a> </h2>
         </div>
 
-        <!-- Detailed information of the second category -->
-        <div class="right_present_B content">
-
-            <div class="card">
-                <h1>Memory transformation and alpha desynchronization during sleep</h1>
-                <h2>Staresina Lab, University of Oxford, Feb 2024 - Oct 2024</h2>
-                <p>Sleep has positive effects on memory consolidation, a critical process for learning 
-                    and cognitive function. By analyzing changes in both lower and higher-level visual 
-                    representations of episodic memories before and after sleep, we aim to understand how sleep 
-                    affects the retention and modification of visual and semantic information.
-                </p>
-                <p>My roles:</p>
-                <ul>
-                    <li>Implemented visual and semantic deep neural networks (Alexnet, ResNet, BLIP, CLIP,
-                        GPT-Neo) and encoding models (Linear regression, Ridge regression model) to study the episodic memory
-                        representations pre- and post-sleep. </li>
-                    <li>Conducted statistical analysis, including correlating sleep and memory retention EEG data with encoding model predictions 
-                        by using both Python and Matlab.</li>
-                    <li>Assisted in EEG-fMRI data collections in the lab, including EEG setup, capping and localization,
-                        monitoring fMRI scanning, fMRI preprocessing, MVPA, diffusion MRI analysis and modeling.</li>
-                </ul>
-                <p>Paper in preparation.</p>
-            </div>
-
-            <hr/>
-
-            <div class="card">
-                <h1>Attempting dream decoding with generalizable visual EEG encoding models</h1>
-                <h2>DxE Laboratory, University of Montreal, May 2023 - Oct 2023</h2>
-                <p> The realm of dreams remains relatively uncharted due to the reliance of subjective 
-                    reports to access dream content. Building a dream decoding model is difficult due 
-                    to the difficulty in collecting large sample sizes of dream experience. We trained 
-                    an encoding model to generate EEG signals from deep neural network feature maps of 
-                    visual images viewed during waking, and used the model to try and predict EEG 
-                    signals collected during dreaming.</p>
-                <!-- Bullet points summarizing your role: CAN BE REMOVED AFTER APPLICATION -->
-                <p>My role:</p>
-                <ul>
-                    <li>Preprocessed EEG data, including noise reduction and artifact removal, to ensure
-                        accurate analysis of neural signals associated with dream content.</li>
-                    <li>Designed a text-to-image AI pipeline to generate dream images from dream reports.</li>
-                    <li>Independently implemented pre-trained deep neural networks (ALexnet) and developed the encoding model to map EEG signals 
-                        to visual features. Generalised the encoding models across waking and dreaming datasets.</li>
-                    <li>Conducted statistical analysis, including representative similarity analysis (RSA), permutation 
-                        tests and correlational analysis to decode visual dream content.</li>
-                </ul>
-                <p><a href="../../dict/files/S.Yu_cns_poster.pdf" class="ext-link">Poster</a> was presented at the Cognitive 
-                    Neuroscience Society 2024 Annual Meeting.
-                </p>
-
-                <!-- Insert image -->
-                <div class="stacking_img">
-                    <img src="../../dict/images/research/dream_exp.png">
-                    <img src="../../dict/images/research/dnn.png">
-                </div>
-
-                <hr/> <!-- Horizontal line separator -->
-
-            </div>
-
+        <div class="subpage-name">
+            <h1>Memory transformation and alpha desynchronization during sleep</h1>
         </div>
-
-        <!-- Detailed information of the third category -->
-        <!-- <div class="right_present_C content">
-        </div> -->
+        <div class="subpage-right">
+            <h2>Sleep has positive effects on memory consolidation, a critical process for learning 
+                and cognitive function. By analyzing changes in both lower and higher-level visual 
+                representations of episodic memories before and after sleep, we aim to understand how sleep 
+                affects the retention and modification of visual and semantic information.
+            </h2>
+        </div>
         
-        <!-- Return to the main page -->
-        <div class="return">
-            <div class="btn ds_to_home">
-                <a href="../../index.html" class="int-link">
-                    <h2>Return</h2>
-                </a>
-            </div>
+        <div class="subpage-name">
+            <h1>Attempting dream decoding with generalizable visual EEG encoding models</h1>
         </div>
-
+        <div class="subpage-right">
+            <h2>The realm of dreams remains relatively uncharted due to the reliance of subjective 
+                reports to access dream content. Building a dream decoding model is difficult due 
+                to the difficulty in collecting large sample sizes of dream experience. We trained 
+                an encoding model to generate EEG signals from deep neural network feature maps of 
+                visual images viewed during waking, and used the model to try and predict EEG 
+                signals collected during dreaming.
+            </h2>
+            <h2><a href="../../dict/files/S.Yu_cns_poster.pdf" class="ext-link">Poster</a> was presented at the Cognitive 
+                Neuroscience Society 2024 Annual Meeting.</h2>
+        </div>
+  
     </div>
 
-    <script>
-        showContent('A');
-    </script>
+    <script src="../../pages/components/header_menu_content.js"></script>
+    <script src="../../menu.js"></script>
 </body>
 </html>
