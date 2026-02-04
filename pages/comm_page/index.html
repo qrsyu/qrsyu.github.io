@@ -7,50 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../main.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- <script src="../index.js"></script> -->
 </head>
 
 
 
 <body style="background-image: url('../../dict/images/comm_cover.png');">
-    <!-- Site header with navigation -->
-    <header class="site-header">
-        <div class="nav-left">
-        <!-- <span class="name-tag">Qiaorong Shannon Yu</span> -->
-        <a href="../../index.html" class="name-tag">Qiaorong Shannon Yu</a>
-        </div>
-
-        <div class="nav-center">
-        <!-- COMPUTATIONAL COGNITIVE NEUROSCIENCE -->
-        </div>
-
-        <button class="nav-menu" id="menuBtn" aria-expanded="false" aria-controls="menuPanel">
-        MENU <span class="burger">☰</span>
-        </button>
-    </header>
-
-    <!-- Slide-in menu panel -->
-    <div class="menu-overlay" id="menuOverlay" hidden></div>
-
-    <aside class="menu-panel" id="menuPanel" aria-hidden="true">
-        <button class="menu-close" id="menuClose" aria-label="Close menu">×</button>
-
-        <nav class="menu-links">
-        <a href="../research_page/index.html">Research</a>
-        <a href="../art_page/index.html">Digital Art</a>
-        <a href="../comm_page/index.html">Teaching</a>
-
-        <hr/>
-
-        <a href="../../dict/files/qyu_cv.pdf"><i class="fas fa-file-alt"></i> CV</a>
-        <a href="mailto:s.yu@nyu.edu"><i class="fas fa-envelope"></i> Email</a>
-        <a href="https://github.com/qrsyu"><i class="fab fa-github"></i> Github</a>
-        <a href="https://scholar.google.com/citations?user=2EaykxYAAAAJ&hl=en&oi=ao"><i class="fab fa-google"></i> Scholar</a>
-        <a href="https://orcid.org/0009-0008-3761-3931" target="_blank" rel="noopener"><i class="fab fa-orcid"></i> ORCID</a>
-        <a href="https://www.linkedin.com/in/qrsyu27315"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <p><i class="fas fa-map-marker-alt"></i> New York, USA</p>
-        </nav>
-    </aside>
+    <div id="site-header"></div>
     
     <canvas id="fx-canvas" aria-hidden="true"></canvas>
 
@@ -66,6 +28,7 @@
         </div>
     </div>
     
+    <script src="../../pages/components/header_menu_content.js"></script>
     <script src="../../menu.js"></script>
 
 </body>
