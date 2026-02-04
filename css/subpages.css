@@ -42,14 +42,8 @@
   object-fit: cover;
   flex: 0 0 auto;
   border-radius: 12px;
-  scroll-snap-align: start;  /* 配合 snap */
+  scroll-snap-align: start;  
 }
-/* .subpage-photo img {
-  
-  height: auto;
-  display: block;
-  object-fit: cover;
-} */
 
 /* Content */
 .subpage-right{
