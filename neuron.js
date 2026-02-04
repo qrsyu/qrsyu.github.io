@@ -14,7 +14,7 @@
       color: "magenta"
     },
     {
-      label: "Community",
+      label: "Teaching",
       href: "./pages/comm_page/index.html",
       color: "amber"
     }
