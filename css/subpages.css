@@ -66,4 +66,19 @@
   text-decoration: none; /* Remove underline from links */
 }
 .subpage-right a:hover {
-  text-decoration: underline;} /* Add underline on hover for better visibility
+  text-decoration: underline;} /* Add underline on hover for better visibility */
+
+
+
+@media (max-width: 768px) {
+  .subpage-photo {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+  .subpage-photo img {
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+  }
+}
