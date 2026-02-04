@@ -10,17 +10,16 @@
 
   mount.innerHTML = await res.text();
 
-  function initMenuWhenReady(retries = 60) {
-    if (typeof window.initMenu === "function") {
-      window.initMenu();
-      return;
-    }
-    if (retries <= 0) {
-      console.warn("initMenu not found (menu.js not loaded?)");
-      return;
-    }
-    setTimeout(() => initMenuWhenReady(retries - 1), 50);
+  if (typeof window.initMenu !== "function") {
+    await new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = "../../menu.js"; 
+      s.onload = resolve;
+      s.onerror = () => reject(new Error("Failed to load menu.js"));
+      document.head.appendChild(s);
+    });
   }
 
-  initMenuWhenReady();
+  if (typeof window.initMenu === "function") window.initMenu();
+  else console.error("initMenu still missing after loading menu.js");
 })();
