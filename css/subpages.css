@@ -12,6 +12,7 @@
 
 /* Name */
 .subpage-name h1{
+  max-width: 100%;
   white-space: normal;
   overflow-wrap: break-word;
   word-break: break-word;
