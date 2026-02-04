@@ -75,7 +75,7 @@
 
 @media (max-width: 768px) {
   .subpage-photo {
-    width: 90vw;
+    width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
   }
