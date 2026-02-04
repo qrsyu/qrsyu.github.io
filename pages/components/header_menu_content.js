@@ -10,5 +10,17 @@
 
   mount.innerHTML = await res.text();
 
-  if (typeof window.initMenu === "function") window.initMenu();
+  function initMenuWhenReady(retries = 60) {
+    if (typeof window.initMenu === "function") {
+      window.initMenu();
+      return;
+    }
+    if (retries <= 0) {
+      console.warn("initMenu not found (menu.js not loaded?)");
+      return;
+    }
+    setTimeout(() => initMenuWhenReady(retries - 1), 50);
+  }
+
+  initMenuWhenReady();
 })();
