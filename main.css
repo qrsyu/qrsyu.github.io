@@ -1,0 +1,35 @@
+@import url("css/menu.css");
+@import url("css/header.css");
+@import url("css/intro.css");
+@import url("css/neuron.css");
+@import url("css/subpages.css");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  background: #000000;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  margin: 0;
+  padding-bottom: 80px;
+}
+
+/* Media query for small screens (phones, under 600px wide) */
+@media (max-width: 768px) {
+  .intro{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .intro-left{
+    flex: none;
+    width: 100%;
+    min-width: 0;
+  }
+  .intro-name h1{
+    white-space: normal; 
+  }
+}
