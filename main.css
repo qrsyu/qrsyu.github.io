@@ -58,7 +58,7 @@ body{
     white-space: normal; 
   }
   .paper-box{
-    width:100%;
+    max-width:100%;
     white-space: normal; 
     overflow-wrap: anywhere;
     word-break: break-word;
