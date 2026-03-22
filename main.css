@@ -32,4 +32,27 @@ body{
   .intro-name h1{
     white-space: normal; 
   }
+  .subpage-photo {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+  .subpage-photo img {
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+    object-fit: contain;
+  }
+  .subpage-right{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .subpage-right{
+    flex: none;
+    width: 100%;
+    min-width: 0;
+  }
+  .subpage-name h1{
+    white-space: normal; 
+  }
 }
