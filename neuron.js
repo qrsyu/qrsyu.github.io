@@ -16,6 +16,11 @@
     {
       label: "Teaching",
       href: "./pages/comm_page/index.html",
+      color: "green"
+    },
+    {
+      label: "Performance",
+      // href: "./pages/comm_page/index.html",
       color: "amber"
     }
   ];

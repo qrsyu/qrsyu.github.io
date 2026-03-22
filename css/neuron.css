@@ -46,3 +46,6 @@
 .neuron-amber {
   background: radial-gradient(circle, rgba(255,200,0,0.9), rgba(255,80,0,0.3), transparent 70%);
 }
+.neuron-green {
+  background: radial-gradient(circle, rgba(120,255,120,0.9), rgba(0,190,90,0.35), transparent 70%);
+}
