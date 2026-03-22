@@ -70,13 +70,13 @@
 }
 .subpage-right a:hover {
   text-decoration: underline;} /* Add underline on hover for better visibility */
-.paper-box {
+/* .paper-box {
     display: inline-block;
     background: rgba(120,120,120,0.12);
     padding: 10px 16px;
     border-radius: 6px;
     line-height: 1.5;
-}
+} */
 
 
 @media (max-width: 768px) {

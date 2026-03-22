@@ -47,7 +47,6 @@
   color: rgba(240, 240, 240, 0.85);
   text-decoration: none;
 }
-
 .intro-right i{
   font-size: clamp(15px, 1vw, 25px);
 }
@@ -55,6 +54,5 @@
   color: rgba(240, 240, 240, 0.85);
   text-decoration: none; /* Remove underline from links */
 }
-
 .intro-right a:hover {
   text-decoration: underline;} /* Add underline on hover for better visibility
