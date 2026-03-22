@@ -20,6 +20,10 @@ body{
 
 /* Media query for small screens (phones, under 600px wide) */
 @media (max-width: 768px) {
+  html,
+  body{
+    overflow-x: hidden;
+  }
   .intro{
     flex-direction: column;
     gap: 20px;
@@ -46,13 +50,22 @@ body{
   .subpage-right{
     flex-direction: column;
     gap: 20px;
-  }
-  .subpage-right{
     flex: none;
     width: 100%;
     min-width: 0;
   }
   .subpage-name h1{
     white-space: normal; 
+  }
+  .paper-box{
+    width:100%;
+    white-space: normal; 
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .subpage-right h2,
+  .subpage-right a{
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 }
