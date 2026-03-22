@@ -15,12 +15,12 @@
     },
     {
       label: "Teaching",
-      href: "./pages/comm_page/index.html",
+      href: "./pages/teach_page/index.html",
       color: "green"
     },
     {
       label: "Performance",
-      // href: "./pages/comm_page/index.html",
+      href: "./pages/perform_page/index.html",
       color: "amber"
     }
   ];
