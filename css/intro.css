@@ -41,7 +41,7 @@
 }
 .intro-right h2 {
   font-size: clamp(18px, 1vw, 28px);
-  line-height: 1.6;
+  line-height: 1.65;
   font-weight: 400;
   margin: 0 0 1.2em 0;
   color: rgba(240, 240, 240, 0.85);
