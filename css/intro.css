@@ -46,6 +46,7 @@
   margin: 0 0 1.2em 0;
   color: rgba(240, 240, 240, 0.85);
   text-decoration: none;
+  hyphens: auto;
 }
 .intro-right i{
   font-size: clamp(15px, 1vw, 25px);
