@@ -18,6 +18,7 @@
   color: rgba(240, 240, 240, 0.8);
   letter-spacing: 0.5px;
   white-space: nowrap;
+  width: 100%;  
 }
 
 /* Photo */
