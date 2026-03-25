@@ -16,7 +16,7 @@
   white-space: normal;
   overflow-wrap: break-word;
   word-break: break-word;
-  font-size: clamp(30px, 5vw, 35px);
+  font-size: clamp(24px, 5vw, 30px);
   line-height: 1.1;
   margin: 0;
   color: rgba(240, 240, 240, 0.85);
@@ -62,8 +62,8 @@
   min-width: 0; 
 }
 .subpage-right h2 {
-  font-size: clamp(18px, 1vw, 28px);
-  line-height: 1.65;
+  font-size: clamp(18px, 1vw, 24px);
+  line-height: 1.8;
   font-weight: 400;
   margin: 0 0 0.5em 0;
   color: rgba(240, 240, 240, 0.85);
@@ -85,7 +85,7 @@
     background: rgba(120,120,120,0.12);
     padding: 10px 16px;
     border-radius: 6px;
-    line-height: 1.5;
+    line-height: 1.8;
     white-space: normal;
     max-width: 95%;
 }
