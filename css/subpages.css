@@ -16,12 +16,11 @@
   white-space: normal;
   overflow-wrap: break-word;
   word-break: break-word;
-}
-.subpage-name h1 {
   font-size: clamp(30px, 5vw, 35px);
   line-height: 1.1;
   margin: 0;
-  color: #ffffff;
+  color: rgba(240, 240, 240, 0.85);
+  text-decoration: none; /* Remove underline from links */
   letter-spacing: 0.5px;
 }
 
