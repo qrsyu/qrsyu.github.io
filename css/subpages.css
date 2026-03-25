@@ -68,7 +68,11 @@
   text-decoration: none; /* Remove underline from links */
 }
 .subpage-right a:hover {
-  text-decoration: underline;} /* Add underline on hover for better visibility */
+  text-decoration: underline; /* Add underline on hover for better visibility */
+} 
+.subpage-name a:visited {
+  color: rgba(240, 240, 240, 0.85);
+}
 .paper-box {
     display: inline-block;
     background: rgba(120,120,120,0.12);
