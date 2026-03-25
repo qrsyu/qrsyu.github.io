@@ -26,6 +26,9 @@
 .subpage-name a:visited {
   color: rgba(240, 240, 240, 0.85);
 }
+.subpage-name a:hover {
+  text-decoration: underline;
+}
 
 /* Photo */
 .subpage-photo{
