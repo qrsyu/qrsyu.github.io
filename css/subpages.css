@@ -23,10 +23,13 @@
   text-decoration: none; /* Remove underline from links */
   letter-spacing: 0.5px;
 }
-.subpage-name a:visited {
+.subpage-name h1 a,
+.subpage-name h1 a:visited {
   color: rgba(240, 240, 240, 0.85);
+  text-decoration: none;
 }
-.subpage-name a:hover {
+.subpage-name h1 a:hover,
+.subpage-name h1 a:active {
   text-decoration: underline;
 }
 
