@@ -12,7 +12,7 @@
 
 /* Name */
 .intro-name h1 {
-  font-size: clamp(30px, 4vw, 35px);
+  font-size: 30px;
   line-height: 1.1;
   margin: 0;
   color: rgba(240, 240, 240, 0.8);
