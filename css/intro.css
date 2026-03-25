@@ -11,15 +11,13 @@
 }
 
 /* Name */
-.intro-name h1{
-  white-space: nowrap;
-}
 .intro-name h1 {
   font-size: clamp(30px, 5vw, 35px);
   line-height: 1.1;
   margin: 0;
-  color: #ffffff;
+  color: rgba(240, 240, 240, 0.75);
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 /* Photo */
@@ -41,7 +39,7 @@
 }
 .intro-right h2 {
   font-size: clamp(18px, 1vw, 28px);
-  line-height: 1.65;
+  line-height: 2.0;
   font-weight: 400;
   margin: 0 0 1.2em 0;
   color: rgba(240, 240, 240, 0.85);
@@ -52,7 +50,7 @@
   font-size: clamp(15px, 1vw, 25px);
 }
 .intro-right a {
-  color: rgba(240, 240, 240, 0.85);
+  color: rgba(240, 240, 240, 0.75);
   text-decoration: none; /* Remove underline from links */
 }
 .intro-right a:hover {
