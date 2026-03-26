@@ -6,22 +6,30 @@
     {
       label: "Research",
       href: "./pages/research_page/index.html",
-      color: "cyan"
+      color: "cyan",
+      x: 10,
+      y: 30
     },
     {
       label: "Visuals",
       href: "./pages/art_page/index.html",
-      color: "magenta"
+      color: "magenta",
+      x: 33,
+      y: 20
     },
     {
       label: "Teaching",
       href: "./pages/teach_page/index.html",
-      color: "green"
+      color: "green",
+      x: 52,
+      y: 25
     },
     {
       label: "Performance",
       href: "./pages/perform_page/index.html",
-      color: "amber"
+      color: "amber",
+      x: 75,
+      y: 20
     }
   ];
 
@@ -36,8 +44,8 @@
     // Random initial position if x/y not provided
     const rand = (min, max) => min + Math.random() * (max - min);
 
-    const top = `${rand(10, 85)}%`;
-    const left = `${rand(10, 85)}%`;
+    const top = y != null ? (typeof y === "number" ? `${y}%` : y) : `${rand(10, 85)}%`;
+    const left = x != null ? (typeof x === "number" ? `${x}%` : x) : `${rand(10, 85)}%`;
 
     a.style.left = left;
     a.style.top = top;
