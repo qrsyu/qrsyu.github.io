@@ -61,43 +61,125 @@
   /* =========================
      Floating motion
   ========================= */
-  function floatNeuron(el, container) {
+  function floatNeurons(neurons, container) {
     const bounds = () => container.getBoundingClientRect();
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-    let x = el.offsetLeft;
-    let y = el.offsetTop;
+    const noise = isMobile ? 0.14 : 0.2; // 随机强度（越大越活跃）
+    const smooth = 0.95; // 平滑程度（越接近1越“飘”）
+    const maxSpeed = 100; // 防止突然窜
+    const speedScale = isMobile ? 5 : 7;
+    const wallBounce = 0.65;
+    const collisionBounce = 0.75;
 
-    let vx = 0;
-    let vy = 0;
+    const bodies = neurons.map((el) => {
+      const rect = el.getBoundingClientRect();
+      return {
+        el,
+        baseX: el.offsetLeft,
+        baseY: el.offsetTop,
+        x: el.offsetLeft,
+        y: el.offsetTop,
+        w: rect.width,
+        h: rect.height,
+        r: Math.min(rect.width, rect.height) / 2,
+        vx: 0,
+        vy: 0
+      };
+    });
 
-    const noise = 0.2;     // 随机强度（越大越活跃）
-    const smooth = 0.95;    // 平滑程度（越接近1越“飘”）
-    const maxSpeed = 100;    // 防止突然窜
-    const speedScale = 7; 
-    const edgePad = 40;
+    function clampBody(body, width, height, edgePad) {
+      const minX = edgePad;
+      const minY = edgePad;
+      const maxX = width - edgePad - body.w;
+      const maxY = height - edgePad - body.h;
+
+      if (body.x < minX) {
+        body.x = minX;
+        if (body.vx < 0) body.vx *= -wallBounce;
+      } else if (body.x > maxX) {
+        body.x = maxX;
+        if (body.vx > 0) body.vx *= -wallBounce;
+      }
+
+      if (body.y < minY) {
+        body.y = minY;
+        if (body.vy < 0) body.vy *= -wallBounce;
+      } else if (body.y > maxY) {
+        body.y = maxY;
+        if (body.vy > 0) body.vy *= -wallBounce;
+      }
+    }
+
+    function resolveCollisions() {
+      for (let i = 0; i < bodies.length; i += 1) {
+        for (let j = i + 1; j < bodies.length; j += 1) {
+          const a = bodies[i];
+          const b = bodies[j];
+
+          const ax = a.x + a.w / 2;
+          const ay = a.y + a.h / 2;
+          const bx = b.x + b.w / 2;
+          const by = b.y + b.h / 2;
+
+          const dx = bx - ax;
+          const dy = by - ay;
+          const dist = Math.hypot(dx, dy);
+          const minDist = a.r + b.r;
+
+          if (dist >= minDist || dist === 0) continue;
+
+          const nx = dx / dist;
+          const ny = dy / dist;
+          const overlap = minDist - dist;
+
+          // First separate them so they no longer overlap.
+          a.x -= nx * overlap * 0.5;
+          a.y -= ny * overlap * 0.5;
+          b.x += nx * overlap * 0.5;
+          b.y += ny * overlap * 0.5;
+
+          // Then exchange velocity along the collision normal.
+          const rvx = b.vx - a.vx;
+          const rvy = b.vy - a.vy;
+          const velAlongNormal = rvx * nx + rvy * ny;
+          if (velAlongNormal > 0) continue;
+
+          const impulse = (-(1 + collisionBounce) * velAlongNormal) / 2;
+          const ix = impulse * nx;
+          const iy = impulse * ny;
+
+          a.vx -= ix;
+          a.vy -= iy;
+          b.vx += ix;
+          b.vy += iy;
+        }
+      }
+    }
 
     function tick() {
-      // Brownian velocity update
-      vx = vx * smooth + (Math.random() - 0.5) * noise;
-      vy = vy * smooth + (Math.random() - 0.5) * noise;
-
-      // clamp speed
-      vx = Math.max(-maxSpeed, Math.min(maxSpeed, vx));
-      vy = Math.max(-maxSpeed, Math.min(maxSpeed, vy));
-
-      x += vx * speedScale;
-      y += vy * speedScale;
-
       const { width, height } = bounds();
-      const r = el.getBoundingClientRect();
-      const rx = r.width / 2;
-      const ry = r.height / 2;
+      const edgePad = Math.max(12, Math.min(40, Math.min(width, height) * 0.06));
 
-      // soft boundary clamp
-      x = Math.max(edgePad + rx, Math.min(width  - edgePad - rx, x));
-      y = Math.max(edgePad + ry, Math.min(height - edgePad - ry, y));
+      for (const body of bodies) {
+        body.vx = body.vx * smooth + (Math.random() - 0.5) * noise;
+        body.vy = body.vy * smooth + (Math.random() - 0.5) * noise;
 
-      el.style.transform = `translate(${x - el.offsetLeft}px, ${y - el.offsetTop}px)`;
+        body.vx = Math.max(-maxSpeed, Math.min(maxSpeed, body.vx));
+        body.vy = Math.max(-maxSpeed, Math.min(maxSpeed, body.vy));
+
+        body.x += body.vx * speedScale;
+        body.y += body.vy * speedScale;
+
+        clampBody(body, width, height, edgePad);
+      }
+
+      resolveCollisions();
+
+      for (const body of bodies) {
+        clampBody(body, width, height, edgePad);
+        body.el.style.transform = `translate(${body.x - body.baseX}px, ${body.y - body.baseY}px)`;
+      }
 
       requestAnimationFrame(tick);
     }
@@ -121,11 +203,14 @@
     const section = document.getElementById("neurons-section");
     if (!section) return;
 
+    const neurons = [];
     neuronsConfig.forEach(cfg => {
       const neuron = createNeuron(cfg);
       layer.appendChild(neuron);
-      floatNeuron(neuron, section);
+      neurons.push(neuron);
     });
+
+    floatNeurons(neurons, section);
   }
 
   if (document.readyState === "loading") {
