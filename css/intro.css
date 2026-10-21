@@ -38,7 +38,14 @@
 /* Introduction */
 .intro-right{
   flex: 1 1 auto;
-  min-width: 0; 
+  min-width: 0;
+}
+/* On wide screens, push the intro down so it starts at the top of the photo
+   (name height = font-size × line-height, plus the photo's margin-top) */
+@media (min-width: 769px) {
+  .intro-right{
+    padding-top: calc(30px * 1.1 + 1.2rem);
+  }
 }
 .intro-right h2 {
   font-size: clamp(18px, 1vw, 28px);
