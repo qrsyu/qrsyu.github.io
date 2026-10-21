@@ -33,6 +33,11 @@ body{
     width: 100%;
     min-width: 0;
   }
+  .intro-photo{
+    width: 72%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .intro-name h1{
     white-space: normal; 
   }
