@@ -7,7 +7,7 @@
   z-index: 999;
 
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
 
   background: #000;
@@ -18,7 +18,7 @@
   background: #fff;
   color: #0b1b2b;
   padding: 4px 10px;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 13px;
   letter-spacing: 2px;
   text-decoration: none;
