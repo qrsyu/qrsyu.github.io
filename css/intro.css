@@ -40,11 +40,18 @@
   flex: 1 1 auto;
   min-width: 0;
 }
-/* On wide screens, push the intro down so it starts at the top of the photo
-   (name height = font-size × line-height, plus the photo's margin-top) */
+/* On wide screens, line up the middle of the intro with the middle of the photo.
+   The padding matches the space above the photo (name height = font-size × line-height,
+   plus the photo's margin-top), so centring the two columns centres the text on the photo. */
 @media (min-width: 769px) {
+  .intro{
+    align-items: center;
+  }
   .intro-right{
     padding-top: calc(30px * 1.1 + 1.2rem);
+  }
+  .intro-right h2:last-child{
+    margin-bottom: 0;
   }
 }
 .intro-right h2 {
