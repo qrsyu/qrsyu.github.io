@@ -52,7 +52,7 @@
   font-size: clamp(15px, 1vw, 25px);
 }
 .intro-right a {
-  color: rgba(240, 240, 240, 0.75);
+  color: rgb(0, 188, 233);
   text-decoration: none; /* Remove underline from links */
 }
 .intro-right a:hover {
