@@ -48,7 +48,7 @@
   text-decoration: none;
   hyphens: auto;
 }
-.intro-right i{
+.intro-right i.fa, .intro-right i[class*="fa-"] {
   font-size: clamp(15px, 1vw, 25px);
 }
 .intro-right a {
