@@ -18,6 +18,16 @@ body{
   padding-bottom: 80px;
 }
 
+.home-page .name-tag,
+.home-page .intro-name h1,
+.home-page .intro-right h2{
+  font-family: "Times New Roman", Times, serif;
+}
+
+.home-page .chinese-name{
+  font-family: KaiTi, "楷体", STKaiti, serif;
+}
+
 /* Media query for small screens (phones, under 600px wide) */
 @media (max-width: 768px) {
   html,
