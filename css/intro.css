@@ -1,6 +1,12 @@
+/* The empty canvas was a default 300×150 box that pushed the intro down;
+   hide it and set the space below the fixed header directly */
+.home-page #fx-canvas{
+  display: none;
+}
 .intro{
   width: 90vw;
   margin: 0 auto;
+  padding-top: 110px;
   display:flex;
   align-items:flex-start;
   gap: clamp(24px, 3.8vw, 50px);
