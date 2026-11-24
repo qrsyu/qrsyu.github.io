@@ -66,12 +66,11 @@
   filter: blur(1px);
 }
 
-/* Touch screens have no hover: always show the title at the bottom */
+/* Touch screens have no hover: always show the title, in the center,
+   with the same dark veil as the desktop hover effect */
 @media (hover: none){
   .art-tile-title{
     opacity: 1;
-    align-items: flex-end;
-    background: linear-gradient(transparent 55%, rgba(0, 0, 0, 0.6));
   }
 }
 
