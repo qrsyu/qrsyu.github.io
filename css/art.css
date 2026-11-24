@@ -75,12 +75,41 @@
   }
 }
 
-/* Back link on a project page */
-.art-back{
-  color: rgba(240, 240, 240, 0.6);
-  text-decoration: none;
-  font-size: 15px;
+/* Project page: images stacked one after another, like an article */
+.art-photos{
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
-.art-back:hover{
-  color: rgba(240, 240, 240, 0.9);
+.art-photos img{
+  width: 100%;
+  height: auto;                    /* keep each image's own shape */
+  display: block;
+  border-radius: 12px;
+}
+
+/* Fade-and-rise as each image scrolls into view */
+.art-photos img.reveal{
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.art-photos img.reveal.shown{
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce){
+  .art-photos img.reveal{
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 768px){
+  .art-photos{ gap: 16px; }
+  .art-photos img{ border-radius: 8px; }
 }

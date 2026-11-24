@@ -26,6 +26,15 @@ body{
   font-family: "Times New Roman", Times, serif;
 }
 
+/* Visuals pages use the same serif font as the home introduction
+   (the menu keeps its default font, as on the home page) */
+.art-page .name-tag,
+.art-page .subpage,
+.art-page .subpage h1,
+.art-page .subpage h2{
+  font-family: "Times New Roman", Times, serif;
+}
+
 .home-page .chinese-name{
   font-family: KaiTi, "楷体", STKaiti, "LXGW WenKai TC", serif;
 }

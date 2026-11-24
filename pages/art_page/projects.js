@@ -15,7 +15,7 @@ window.ART_PROJECTS = [
     slug: "vr",
     title: "Nocturne Garden",
     cover: "dict/images/art/unreal-engine/13.png",
-    images: [10, 11, 12, 13, 5, 6, 16, 7, 3, 4, 2, 15, 1, 8, 9, 14]
+    images: [13, 12, 11, 10, 5, 6, 16, 7, 3, 4, 2, 15, 1, 8, 9, 14]
       .map(n => `dict/images/art/unreal-engine/${n}.png`),
     description: [
       // Paragraph 1: what the project is
@@ -29,7 +29,7 @@ window.ART_PROJECTS = [
       //   - What inspired the night setting, the moon orbs, the gothic arches?
       //   - Why mix calm, dreamy parts with dark ones (fire, skeletons)?
       //   - How did designing for VR (scale, light, movement) shape your choices?
-      `[Creative statement — write your ideas here.]`
+      // `[Creative statement — write your ideas here.]`
     ]
   }
 ];
