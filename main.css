@@ -59,6 +59,10 @@ body{
     margin-left: auto;
     margin-right: auto;
   }
+  .intro-right #neurons-section{
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
   .intro-name h1{
     white-space: normal; 
   }

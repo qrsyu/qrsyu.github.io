@@ -56,8 +56,34 @@
   .intro-right{
     padding-top: calc(30px * 1.1 + 1.2rem);
   }
-  .intro-right h2:last-child{
-    margin-bottom: 0;
+}
+
+/* Desktop home: everything fits in one screen and the page does not scroll.
+   Left = name + photo, right = introduction + floating neurons.
+   Only when the window is tall enough; short windows can still scroll. */
+@media (min-width: 769px) and (min-height: 650px) {
+  html:has(body.home-page),
+  body.home-page{
+    height: 100vh;
+    overflow: hidden;
+  }
+  body.home-page{
+    padding-bottom: 0;
+  }
+  .intro{
+    height: 100vh;
+    padding-bottom: 40px;
+  }
+  /* Photo shrinks if the window is short, so it always fits */
+  .intro-photo img{
+    max-height: calc(100vh - 110px - 40px - 30px * 1.1 - 1.2rem);
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .intro-right #neurons-section{
+    height: clamp(200px, 30vh, 300px);
+    margin-top: 0.5em;
   }
 }
 .intro-right h2 {
