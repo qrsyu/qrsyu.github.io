@@ -2,35 +2,39 @@
   /* =========================
      Config
   ========================= */
+  // x / y = position of each circle's top-left corner, in % of the section.
+  // A circle is about 12% of the screen wide, so x = 13 / 43 / 73 puts the
+  // circle centers at roughly 1/5, 1/2 and 4/5 of the width (evenly spread).
   const neuronsConfig = [
     {
       label: "Research",
       href: "./pages/research_page/index.html",
       color: "cyan",
-      x: 10,
-      y: 30
+      x: 13,
+      y: 28
     },
     {
       label: "Visuals",
       href: "./pages/art_page/index.html",
       color: "magenta",
-      x: 33,
-      y: 20
+      x: 43,
+      y: 15
     },
     {
       label: "Teaching",
       href: "./pages/teach_page/index.html",
       color: "green",
-      x: 52,
-      y: 25
-    },
-    {
-      label: "Performance",
-      href: "./pages/perform_page/index.html",
-      color: "amber",
-      x: 75,
-      y: 20
+      x: 73,
+      y: 28
     }
+    // Performance is hidden for now (dance now goes in Visuals)
+    // ,{
+    //   label: "Performance",
+    //   href: "./pages/perform_page/index.html",
+    //   color: "amber",
+    //   x: 75,
+    //   y: 20
+    // }
   ];
 
   /* =========================
