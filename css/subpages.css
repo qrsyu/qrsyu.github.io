@@ -1,6 +1,14 @@
+/* The empty <canvas id="fx-canvas"> on each subpage is not used; its default
+   300x150 size was pushing the content down. Hide it and set the space below
+   the fixed header directly (same as the home page). */
+#fx-canvas{
+  display: none;
+}
+
 .subpage{
   width: 90vw;
   margin: 0 auto;
+  padding-top: 110px;
   display:flex;
   flex-direction: column;
   align-items:flex-start;

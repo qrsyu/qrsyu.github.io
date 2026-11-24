@@ -62,6 +62,9 @@ body{
   .intro-name h1{
     white-space: normal; 
   }
+  .subpage{
+    padding-top: 90px;
+  }
   .subpage-photo {
     width: 100vw;
     margin-left: calc(50% - 50vw);
