@@ -29,7 +29,7 @@
       <nav class="menu-links">
         <a href="../../index.html">Home</a>
         <a href="../../pages/research_page/index.html">Research</a>
-        <a href="../../pages/teach_page/index.html">Teaching</a>
+        <!-- <a href="../../pages/teach_page/index.html">Teaching</a> -->
         <a href="../../pages/art_page/index.html">Visuals</a>
         <!-- <a href="../../pages/perform_page/index.html">Performance</a> -->
 
