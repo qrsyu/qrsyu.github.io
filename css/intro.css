@@ -62,27 +62,51 @@
    Left = name + photo, right = introduction + floating neurons.
    Only when the window is tall enough; short windows can still scroll. */
 @media (min-width: 769px) and (min-height: 650px) {
+  /* All vertical spacing is a fraction of the visible screen height,
+     so the layout scales the same way on every screen.
+     --screen-h: visible screen height. 100dvh leaves out browser toolbars
+       (e.g. Safari on iPad); 100vh is the fallback for older browsers.
+     --home-top / --home-bottom: empty space above / below the content.
+       The top space also clears the fixed header (this layout only runs on
+       screens at least 650px tall, and 14% of 650px = 91px > header 55px). */
+  :root{
+    --screen-h: 100vh;
+  }
+  @supports (height: 100dvh){
+    :root{ --screen-h: 100dvh; }
+  }
+  :root{
+    --home-top:    calc(var(--screen-h) * 0.14);
+    --home-bottom: calc(var(--screen-h) * 0.10);
+  }
+
   html:has(body.home-page),
   body.home-page{
-    height: 100vh;
+    height: var(--screen-h);
     overflow: hidden;
   }
   body.home-page{
     padding-bottom: 0;
   }
   .intro{
-    height: 100vh;
-    padding-bottom: 40px;
+    height: var(--screen-h);
+    padding-top: var(--home-top);
+    padding-bottom: var(--home-bottom);
   }
-  /* Photo shrinks if the window is short, so it always fits */
+  /* Photo fills the height left over after the spacing and the name */
   .intro-photo img{
-    max-height: calc(100vh - 110px - 40px - 30px * 1.1 - 1.2rem);
+    max-height: calc(var(--screen-h) - var(--home-top) - var(--home-bottom) - 30px * 1.1 - 1.2rem);
     width: auto;
     max-width: 100%;
     margin: 0 auto;
   }
+  /* The right column now also holds the neurons, so the extra top padding
+     (used to line up text with the photo) would only push it down */
+  .intro-right{
+    padding-top: 0;
+  }
   .intro-right #neurons-section{
-    height: clamp(200px, 30vh, 300px);
+    height: calc(var(--screen-h) * 0.26);
     margin-top: 0.5em;
   }
 }
