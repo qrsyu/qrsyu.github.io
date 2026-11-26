@@ -30,11 +30,61 @@ function bindMenu() {
   close.addEventListener("click", closeMenu);
   overlay.addEventListener("click", closeMenu);
 
+  // Email links: the mailto: link still opens the visitor's mail app if they
+  // have one. Many people have none set up (e.g. they use Gmail in the
+  // browser), so we also copy the address and show a short message.
+  panel.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      const address = link.getAttribute("href").slice("mailto:".length).split("?")[0];
+      copyText(address).then(
+        () => showToast("Email address copied: " + address),
+        () => showToast(address)  // copy not allowed: at least show the address
+      );
+    });
+  });
+
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
 
   return true;
+}
+
+// Copy text to the clipboard. Uses the modern API when available
+// (https / localhost), otherwise an older method that also works offline.
+function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text);
+  }
+  return new Promise((resolve, reject) => {
+    const area = document.createElement("textarea");
+    area.value = text;
+    area.setAttribute("readonly", "");
+    area.style.position = "fixed";
+    area.style.opacity = "0";
+    document.body.appendChild(area);
+    area.select();
+    let ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    area.remove();
+    ok ? resolve() : reject();
+  });
+}
+
+// Small message at the bottom of the screen that fades out by itself.
+function showToast(message) {
+  let toast = document.getElementById("site-toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "site-toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(showToast.timer);
+  showToast.timer = setTimeout(() => toast.classList.remove("show"), 3000);
 }
 
 // 1) 给“注入式页面”用：注入完成后会调用 window.initMenu()

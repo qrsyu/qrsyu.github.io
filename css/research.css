@@ -1,0 +1,159 @@
+/* Research page: publication list.
+   Each entry = small picture on the left, text on the right:
+   title / authors / venue / one-line description / links */
+.pub-list{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 4vw, 56px);
+}
+
+.pub{
+  display: grid;
+  grid-template-columns: clamp(160px, 18vw, 260px) 1fr;
+  gap: clamp(20px, 3vw, 48px);
+  align-items: center;              /* picture and text centered vertically */
+}
+
+/* Picture: fixed 16:9 box, same size for every entry */
+.pub-thumb{
+  aspect-ratio: 16 / 9;            /* width : height; e.g. 3 / 2 is a bit taller */
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+}
+/* Every picture fills the same box; anything that sticks out is
+   trimmed equally from both sides, keeping the middle of the image */
+.pub-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+/* Boxes that hold a picture have no grey background, so pictures with a
+   transparent background sit directly on the page */
+.pub-thumb:not(.pub-thumb-empty){
+  background: none;
+}
+/* Placeholder until a picture is added */
+.pub-thumb-empty{
+  display: grid;
+  place-items: center;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 28px;
+}
+
+.pub-info{
+  min-width: 0;
+}
+.pub-info p{
+  margin: 0;
+}
+
+.pub-title{
+  font-size: clamp(19px, 1.5vw, 23px);
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 0.45em 0;
+  color: rgba(240, 240, 240, 0.92);
+}
+.pub-title a{
+  color: inherit;
+  text-decoration: none;
+}
+.pub-title a:hover{
+  text-decoration: underline;
+}
+
+.pub-authors{
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(240, 240, 240, 0.7);
+}
+.pub-authors strong{
+  font-weight: 700;
+  color: rgba(240, 240, 240, 0.95);
+}
+
+.pub-venue{
+  font-size: 17px;
+  line-height: 1.6;
+  font-style: italic;
+  color: rgba(240, 240, 240, 0.55);
+}
+
+.pub-desc{
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(240, 240, 240, 0.8);
+  margin-top: 0.6em !important;
+}
+
+/* Links row: Paper • Poster • Code • Abstract */
+.pub-links{
+  margin-top: 0.6em !important;
+  font-size: 17px;
+  line-height: 1.8;
+}
+.pub-links > a,
+.pub-abstract-btn{
+  color: rgb(195, 202, 129);          /* same accent as links on the home page */
+  text-decoration: none;
+}
+.pub-links > a:hover,
+.pub-abstract-btn:hover{
+  text-decoration: underline;
+}
+.pub-links > * + *::before{
+  content: "•";
+  display: inline-block;
+  margin: 0 0.7em;
+  color: rgba(240, 240, 240, 0.35);
+  text-decoration: none;
+}
+.pub-links > a[target="_blank"]::after{
+  content: " ↗";
+  font-size: 0.8em;
+}
+.pub-abstract-btn{
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.pub-abstract-btn::after{
+  content: " ▾";
+  font-size: 0.8em;
+}
+.pub-abstract-btn[aria-expanded="true"]::after{
+  content: " ▴";
+}
+
+.pub-abstract{
+  grid-column: 2;                   /* second row, under the text column */
+  margin-top: calc(-1 * clamp(20px, 3vw, 48px) + 0.8em);  /* undo the row gap */
+  padding-left: 14px;
+  border-left: 2px solid rgba(255, 255, 255, 0.15);
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(240, 240, 240, 0.65);
+  hyphens: auto;
+}
+
+/* Phones: picture above the text */
+@media (max-width: 600px){
+  .pub{
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .pub-thumb{
+    max-width: 320px;
+  }
+  .pub-abstract{
+    grid-column: 1;
+    margin-top: 0;
+  }
+}

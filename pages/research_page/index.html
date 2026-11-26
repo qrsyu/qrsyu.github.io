@@ -42,74 +42,117 @@
             </h2>
         </div>
 
+        <!-- Both lists are filled in from publications.js -->
         <div class="subpage-name">
-            <h1><a href="https://doi.org/10.64898/2026.03.22.713480">When and Where: A Model Hippocampal Network Unifies Formation of Time Cells and Place Cells</a></h1>
+            <h1>Ongoing Projects</h1>
         </div>
-        <div class="subpage-right">
-            <h2>Hippocampal place and time cells encode spatial and temporal aspects of experience. Both have the same neural substrate, but have been modeled as having different functions and mechanistic origins, 
-                place cells as continuous attractors, and time cells as leaky integrators. Here, we show that both types emerge from two dynamical regimes of a single recurrent network (RNN) modeling hippocampal CA3 as predictive autoencoder. 
-                During spatial navigation, the network generates stable attractor-like place fields. 
-                But trained on temporally structured inputs, the network produces sequentially broadened fields, recapitulating time cells.
-                By varying spatio-temporal input patterning, we observe hidden units transition smoothly between time cell-like and place cell-like representations. 
-                These results suggest a shared origin, but task-driven difference, between place and time cells.
-            </h2>
-            <!-- <h2><a href="https://doi.org/10.64898/2026.03.22.713480" class="ext-link paper-box">Preprint</a> under review.</h2> -->
-            <h2><a href="https://qrsyu.github.io/dict/files/cosyne.pdf" class="ext-link paper-box">Poster</a> presented at the COSYNE (Computational System Neuroscience) 2026.</h2>
-        </div>
+        <div class="pub-list" id="ongoingList"></div>
 
         <div class="subpage-name">
-            <h1><a href="https://doi.org/10.33232/001c.146824">Measuring the splashback feature: Dependence on halo properties and history</a></h1>
+            <h1>Projects</h1>
         </div>
-        <div class="subpage-right">
-            <h2>The splashback radius defines the boundary of a dark matter halo, where infalling dark matter particles reach their first apocenter and turn around. 
-                In this study, we define the novel splashback depth $\mathcal{D}$ and width $\mathcal{W}$ to examine how the splashback features of dark matter haloes are affected by the physical properties of haloes themselves. 
-                We use the largest simulation run in the hydrodynamic MillenniumTNG project. 
-                Our results show that the splashback depth has a strong dependence on the halo mass and the splashback width has the strongest dependence on halo peak height.
-                We provide the fitting functions of the splashback depth and width in terms of halo mass, redshift, peak height, concentrations and halo formation time. 
-                The depth and width are therefore considered to be a long term memory tracker of haloes since they depend more on accumulative physical properties, e.g., halo mass, peak height and halo formation time.
-                In contrast, they have little dependence on the short term factors such as halo mass accretion rate and most recent major merger time. 
-                They are shaped primarily by the halo’s assembly history, which exerts a stronger influence on the inner density profile than short-term dynamical processes. 
-                The splashback depth and width can therefore be used to characterise the halo’s history and inner structure.
-                <!-- By examining the distribution of the splashback radius 
-                and the associated splashback features of dark matter halos, such as, the width and depth of the minimum 
-                in the gradient profiles of dark matter halos, we discover that, in cosmological galaxy formation simulations IllustrisTNG 
-                and MillenniumTNG. the width of the gradient profile decreases with increasing halo mass and 
-                redshift, indicating a sharper transition in more massive and older halos. Conversely, the depth of the 
-                gradient profile increases with halo mass and remains relatively independent of redshift, suggesting 
-                that more massive halos have more pronounced splashback features regardless of their formation epoch. -->
-            </h2>
-            <!-- <h2><a href="https://doi.org/10.33232/001c.146824" class="ext-link paper-box">Qiaorong,S.Y.,O’Neil,S.,Shen,X.,Vogelsberger,M.,
-                Bose,S.,Hadzhyska,B., ... &Wu,Z. (2025). Measuring the splashback feature: Dependence on halo properties and history. 
-                The Open Journal of Astrophysics, 8.</a></h2> -->
-        </div>
-
-        <!-- <div class="subpage-name">
-            <h1>Memory transformation and alpha desynchronization during sleep</h1>
-        </div>
-        <div class="subpage-right">
-            <h2>Sleep has positive effects on memory consolidation, a critical process for learning 
-                and cognitive function. By analyzing changes in both lower and higher-level visual 
-                representations of episodic memories before and after sleep, we aim to understand how sleep 
-                affects the retention and modification of visual and semantic information.
-            </h2>
-        </div> -->
-        
-        <div class="subpage-name">
-            <h1>Attempting dream decoding with generalizable visual EEG encoding models</h1>
-        </div>
-        <div class="subpage-right">
-            <h2>The realm of dreams remains relatively uncharted due to the reliance of subjective 
-                reports to access dream content. Building a dream decoding model is difficult due 
-                to the difficulty in collecting large sample sizes of dream experience. We trained 
-                an encoding model to generate EEG signals from deep neural network feature maps of 
-                visual images viewed during waking, and used the model to try and predict EEG 
-                signals collected during dreaming.
-            </h2>
-            <h2><a href="https://qrsyu.github.io/dict/files/S.Yu_cns_poster.pdf" class="ext-link paper-box">Poster</a> presented at the CNS (Cognitive 
-                Neuroscience Society) 2024 Annual Meeting.</h2>
-        </div>
-  
+        <div class="pub-list" id="pubList"></div>
     </div>
+
+    <script src="publications.js"></script>
+    <script>
+        (function () {
+            const myNames = window.MY_NAMES || [];
+
+            // Paths inside this site are written from the site root
+            // (e.g. "dict/files/x.pdf"); this page is two folders deep.
+            const fixPath = u => /^(https?:|mailto:|\/)/.test(u) ? u : "../../" + u;
+            const el = (tag, cls, text) => {
+                const e = document.createElement(tag);
+                if (cls) e.className = cls;
+                if (text != null) e.textContent = text;
+                return e;
+            };
+            const outLink = (label, url) => {
+                const a = el("a", null, label);
+                a.href = fixPath(url);
+                if (!/^mailto:/.test(url)) { a.target = "_blank"; a.rel = "noopener"; }
+                return a;
+            };
+
+            // Draw one list of entries into the box with the given id
+            function renderList(listId, items) {
+            const list = document.getElementById(listId);
+            (items || []).forEach((p, i) => {
+                const item = el("article", "pub");
+
+                // Left: picture, or an empty placeholder box
+                const thumb = el("div", "pub-thumb");
+                if (p.image) {
+                    const img = el("img");
+                    img.src = fixPath(p.image);
+                    img.alt = "";
+                    img.loading = "lazy";
+                    thumb.appendChild(img);
+                } else {
+                    thumb.classList.add("pub-thumb-empty");
+                    thumb.innerHTML = '<i class="far fa-image" aria-hidden="true"></i>';
+                }
+                item.appendChild(thumb);
+
+                // Right: title / authors / venue / description / links
+                const info = el("div", "pub-info");
+
+                const title = el("h3", "pub-title");
+                title.appendChild(p.url ? outLink(p.title, p.url) : document.createTextNode(p.title));
+                info.appendChild(title);
+
+                const authors = el("p", "pub-authors");
+                (p.authors || []).forEach((name, k) => {
+                    if (k > 0) authors.appendChild(document.createTextNode(", "));
+                    authors.appendChild(el(myNames.includes(name) ? "strong" : "span", null, name));
+                });
+                info.appendChild(authors);
+
+                if (p.venue) info.appendChild(el("p", "pub-venue", p.venue));
+                if (p.description) info.appendChild(el("p", "pub-desc", p.description));
+
+                const links = el("p", "pub-links");
+                (p.links || []).forEach(l => links.appendChild(outLink(l.label, l.url)));
+
+                let abstractBox = null;
+                if (p.abstract) {
+                    const absId = listId + "-abstract-" + i;
+                    const btn = el("button", "pub-abstract-btn", "Abstract");
+                    btn.type = "button";
+                    btn.setAttribute("aria-expanded", "false");
+                    btn.setAttribute("aria-controls", absId);
+                    const abs = el("div", "pub-abstract", p.abstract);
+                    abs.id = absId;
+                    abs.hidden = true;
+                    btn.addEventListener("click", () => {
+                        abs.hidden = !abs.hidden;
+                        btn.setAttribute("aria-expanded", String(!abs.hidden));
+                    });
+                    links.appendChild(btn);
+                    if (links.childNodes.length) info.appendChild(links);
+                    abstractBox = abs;
+                } else if (links.childNodes.length) {
+                    info.appendChild(links);
+                }
+
+                item.appendChild(info);
+                // The abstract goes on its own row under the text, so opening it
+                // does not move the picture (picture is centered on the text only)
+                if (abstractBox) item.appendChild(abstractBox);
+                list.appendChild(item);
+            });
+            }
+
+            renderList("ongoingList", window.ONGOING_PROJECTS);
+            renderList("pubList", window.PUBLICATIONS);
+
+            // Render math in abstracts once MathJax has loaded
+            if (window.MathJax && MathJax.startup && MathJax.startup.promise) {
+                MathJax.startup.promise.then(() => MathJax.typesetPromise && MathJax.typesetPromise());
+            }
+        })();
+    </script>
 
     <script src="../../pages/components/header_menu_content.js"></script>
     <script src="../../menu.js"></script>

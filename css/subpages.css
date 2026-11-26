@@ -79,7 +79,8 @@
   text-decoration: none;
   hyphens: auto;
 }
-.subpage-right i{
+/* Size for icons only (Font Awesome); italic text keeps the normal text size */
+.subpage-right i.fa, .subpage-right i[class*="fa-"]{
   font-size: clamp(15px, 1vw, 25px);
 }
 .subpage-right a {

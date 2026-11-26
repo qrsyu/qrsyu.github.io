@@ -79,3 +79,30 @@
 .menu-links p {
   white-space: nowrap;
 }
+
+/* Short message shown after copying the email address (see menu.js) */
+#site-toast{
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translate(-50%, 12px);
+  max-width: calc(100vw - 32px);
+  z-index: 1000;
+
+  background: rgba(10,10,14,0.95);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(240,240,240,0.9);
+  padding: 10px 16px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  overflow-wrap: anywhere;
+  text-align: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+#site-toast.show{
+  opacity: 1;
+  transform: translate(-50%, 0);
+}

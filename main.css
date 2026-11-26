@@ -4,6 +4,7 @@
 @import url("css/neuron.css");
 @import url("css/subpages.css");
 @import url("css/art.css");
+@import url("css/research.css");
 
 *{
   margin: 0;
@@ -26,12 +27,13 @@ body{
   font-family: "Times New Roman", Times, serif;
 }
 
-/* Visuals pages use the same serif font as the home introduction
-   (the menu keeps its default font, as on the home page) */
-.art-page .name-tag,
-.art-page .subpage,
-.art-page .subpage h1,
-.art-page .subpage h2{
+/* Every page: the name tag (top left) and the main text of subpages use the
+   same serif font as the home introduction. The menu keeps its default font,
+   as on the home page. */
+.name-tag,
+.subpage,
+.subpage h1,
+.subpage h2{
   font-family: "Times New Roman", Times, serif;
 }
 
