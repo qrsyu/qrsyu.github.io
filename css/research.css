@@ -52,12 +52,17 @@
   margin: 0;
 }
 
+/* Emphasis order: paper title first (semi-bold, brightest), then your name */
 .pub-title{
   font-size: clamp(19px, 1.5vw, 23px);
+  /* Semi-bold look: Times New Roman has no semi-bold (600 shows as full
+     bold), so use regular weight with a thin outline to thicken the strokes.
+     Bigger stroke = bolder; 0 = regular. */
   font-weight: 400;
+  -webkit-text-stroke: 0.6px currentColor;
   line-height: 1.4;
   margin: 0 0 0.45em 0;
-  color: rgba(240, 240, 240, 0.92);
+  color: rgba(240, 240, 240, 0.86);
 }
 .pub-title a{
   color: inherit;
@@ -70,11 +75,13 @@
 .pub-authors{
   font-size: 17px;
   line-height: 1.6;
-  color: rgba(240, 240, 240, 0.7);
+  color: rgba(240, 240, 240, 0.55);
 }
+/* Your name: not bold, just brighter than the other authors
+   (but a little dimmer than the paper title) */
 .pub-authors strong{
-  font-weight: 700;
-  color: rgba(240, 240, 240, 0.95);
+  font-weight: 400;
+  color: rgba(240, 240, 240, 0.8);
 }
 
 .pub-venue{
