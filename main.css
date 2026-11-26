@@ -25,6 +25,16 @@
   }
 }
 
+/* Shared settings for body text on subpages: the Research introduction,
+   the one-line project descriptions on Research, and the description on
+   art project pages. Change them here and all of these follow. */
+:root{
+  --body-text-size: clamp(18px, 1vw, 24px);
+  --body-text-color: rgba(240, 240, 240, 0.75);
+  --body-text-weight: 400;
+  --body-text-line-height: 1.8;
+}
+
 body{
   min-height: 100vh;
   background: #000000;

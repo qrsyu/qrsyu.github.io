@@ -71,11 +71,12 @@
   min-width: 0; 
 }
 .subpage-right h2 {
-  font-size: clamp(18px, 1vw, 24px);
-  line-height: 2.0;
-  font-weight: 400;
+  /* body text settings are shared, see --body-text-* in main.css */
+  font-size: var(--body-text-size);
+  line-height: var(--body-text-line-height);
+  font-weight: var(--body-text-weight);
   margin: 0 0 0.5em 0;
-  color: rgba(240, 240, 240, 0.75);
+  color: var(--body-text-color);
   text-decoration: none;
   hyphens: auto;
 }

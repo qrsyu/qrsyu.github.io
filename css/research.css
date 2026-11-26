@@ -91,10 +91,13 @@
   color: rgba(240, 240, 240, 0.55);
 }
 
+/* One-line description: same settings as the introduction paragraph
+   (see --body-text-* in main.css) */
 .pub-desc{
-  font-size: 18px;
-  line-height: 1.7;
-  color: rgba(240, 240, 240, 0.8);
+  font-size: var(--body-text-size);
+  line-height: var(--body-text-line-height);
+  font-weight: var(--body-text-weight);
+  color: var(--body-text-color);
   margin-top: 0.6em !important;
 }
 
