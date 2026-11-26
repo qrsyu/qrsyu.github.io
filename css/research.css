@@ -157,3 +157,23 @@
     margin-top: 0;
   }
 }
+
+/* Phones and small tablets: make the structure easier to see.
+   - section headings ("Ongoing Projects", "Projects") larger
+   - more space between projects */
+@media (max-width: 768px){
+  .pub-section{
+    width: 100%;
+    margin-top: 24px;
+  }
+  .pub-section h1{
+    font-size: 28px;
+    line-height: 1.4;
+  }
+  .pub-list{
+    gap: 0;
+  }
+  .pub + .pub{
+    margin-top: 64px;
+  }
+}
