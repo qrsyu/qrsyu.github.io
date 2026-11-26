@@ -36,7 +36,7 @@ window.ONGOING_PROJECTS = [
 
 window.PUBLICATIONS = [
   {
-    title: "When and Where: A Model Hippocampal Network Unifies Formation of Time Cells and Place Cells",
+    title: "When and where: A model hippocampal network unifies formation of time cells and place cells",
     url: "https://doi.org/10.64898/2026.03.22.713480",
     authors: ["Qiaorong S. Yu", "Zhaoze Wang", "Vijay Balasubramanian"],
     venue: "Communications Biology, 2026",
