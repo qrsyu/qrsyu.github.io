@@ -158,13 +158,11 @@
   }
 }
 
-/* Desktop: section headings use the same size as project names on the
-   Visuals grid (see --project-heading-size in main.css) */
-@media (min-width: 769px){
-  .pub-section h1{
-    font-size: var(--project-heading-size);
-    letter-spacing: 0.5px;
-  }
+/* Section headings use the same size as project names on the Visuals grid,
+   on every screen (see --project-heading-size in main.css) */
+.pub-section h1{
+  font-size: var(--project-heading-size);
+  letter-spacing: 0.5px;
 }
 
 /* Phones and small tablets: make the structure easier to see.
@@ -176,7 +174,6 @@
     margin-top: 24px;
   }
   .pub-section h1{
-    font-size: 28px;
     line-height: 1.4;
   }
   .pub-list{

@@ -18,6 +18,12 @@
 :root{
   --project-heading-size: clamp(20px, 1.6vw, 24px);
 }
+/* Phones and small tablets: one fixed size for both */
+@media (max-width: 768px){
+  :root{
+    --project-heading-size: 24px;
+  }
+}
 
 body{
   min-height: 100vh;

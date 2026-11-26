@@ -112,3 +112,10 @@
   .art-photos{ gap: 16px; }
   .art-photos img{ border-radius: 8px; }
 }
+
+/* Project page title (e.g. NOCTURNE GARDEN) uses the same size as the
+   project names on the Visuals grid (see --project-heading-size in main.css) */
+.art-page .subpage-name h1{
+  font-size: var(--project-heading-size);
+  letter-spacing: 0.5px;
+}
