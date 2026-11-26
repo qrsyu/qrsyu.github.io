@@ -13,7 +13,7 @@
 window.ART_PROJECTS = [
   {
     slug: "vr",
-    title: "Nocturne Garden",
+    title: "NOCTURNE GARDEN",
     cover: "dict/images/art/unreal-engine/13.png",
     images: [13, 12, 11, 10, 5, 6, 16, 7, 3, 4, 2, 15, 1, 8, 9, 14]
       .map(n => `dict/images/art/unreal-engine/${n}.png`),
