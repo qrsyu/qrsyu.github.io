@@ -21,7 +21,8 @@ window.ART_PROJECTS = [
       // Paragraph 1: what the project is
       `A VR environment I designed during my internship at Motus VR in spring 2022.
        Built in Unreal Engine 4.27, it is the world of an endless running game:
-       a night garden of glowing arches, moonlit orbs, statues and ruins.`,
+       a night garden of glowing arches, moonlit orbs, statues and ruins.
+       The garden includes 5 scenes...`,
 
       // Paragraph 2: your creative ideas -- replace the placeholder text below.
       // Some questions you could answer:

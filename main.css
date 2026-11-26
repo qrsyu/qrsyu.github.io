@@ -12,6 +12,13 @@
   box-sizing: border-box;
 }
 
+/* Shared text size for: project names on the Visuals grid, and the section
+   headings on the Research page ("ONGOING PROJECTS", "PROJECTS").
+   Change it here and both follow. */
+:root{
+  --project-heading-size: clamp(20px, 1.6vw, 24px);
+}
+
 body{
   min-height: 100vh;
   background: #000000;

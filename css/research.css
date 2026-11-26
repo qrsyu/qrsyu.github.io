@@ -158,6 +158,15 @@
   }
 }
 
+/* Desktop: section headings use the same size as project names on the
+   Visuals grid (see --project-heading-size in main.css) */
+@media (min-width: 769px){
+  .pub-section h1{
+    font-size: var(--project-heading-size);
+    letter-spacing: 0.5px;
+  }
+}
+
 /* Phones and small tablets: make the structure easier to see.
    - section headings ("Ongoing Projects", "Projects") larger
    - more space between projects */

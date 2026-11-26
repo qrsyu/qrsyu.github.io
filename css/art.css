@@ -48,7 +48,7 @@
   justify-content: center;
   padding: 16px;
   text-align: center;
-  font-size: clamp(18px, 1.6vw, 24px);
+  font-size: var(--project-heading-size);   /* set in main.css */
   letter-spacing: 0.5px;
   color: rgba(240, 240, 240, 0.95);
   background: rgba(0, 0, 0, 0.45);
