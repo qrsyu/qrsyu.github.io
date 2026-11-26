@@ -98,7 +98,7 @@
                 const info = el("div", "pub-info");
 
                 const title = el("h3", "pub-title");
-                title.appendChild(p.url ? outLink(p.title, p.url) : document.createTextNode(p.title));
+                title.textContent = p.title;   // plain text, not a link (use the Paper link instead)
                 info.appendChild(title);
 
                 const authors = el("p", "pub-authors");

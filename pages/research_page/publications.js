@@ -4,7 +4,8 @@
 
   To add one, copy an entry and change its fields:
     - title:       paper title
-    - url:         where the title links to (usually the paper); can be left out
+    - url:         not used on the page (the title is plain text); the paper
+                   link goes in "links" below as "Paper"
     - authors:     list of author names; your name is shown in bold
                    automatically (see MY_NAMES below)
     - venue:       journal / conference / "Preprint", with the year
